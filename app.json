@@ -1,0 +1,12 @@
+{
+  "name": "portal-demo",
+  "displayName": "portal-demo",
+  "expo": {
+    "name": "portal-demo",
+    "slug": "portal-demo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
