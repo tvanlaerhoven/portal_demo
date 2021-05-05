@@ -1,5 +1,7 @@
 import React from 'react';
-import {View} from 'react-native';
+import {requireNativeComponent} from 'react-native';
+
+const THEOplayerViewNative = requireNativeComponent('THEOplayerView', PlayerView);
 
 export default class PlayerView extends React.Component {
 
@@ -13,7 +15,17 @@ export default class PlayerView extends React.Component {
 
     render() {
         const {style} = this.props;
-        return <View style={style}/>;
+        return <THEOplayerViewNative
+            style={style} autoplay={true}
+            source={
+                {
+                    sources: [{
+                        type: 'application/x-mpegurl',
+                        src: 'https://cdn.theoplayer.com/video/big_buck_bunny/big_buck_bunny.m3u8',
+                    }],
+                    poster: 'https://cdn.theoplayer.com/video/big_buck_bunny/poster.jpg',
+                }
+            }/>;
     }
 }
 
